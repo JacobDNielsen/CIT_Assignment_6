@@ -48,10 +48,7 @@ export function PersonSimple({person}){
             <h3>Known for titles:</h3>
             {/* <p>{person?.id}</p> */}
             
-            {person?.known_for.map((t) => 
-                <Title known_for={t}/>
-               
-            )}
+            {person?.known_for.map((t) => <Title known_for={t}/> )}
         </div>
     )
 }
