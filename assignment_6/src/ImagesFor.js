@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react';
 
 export default function ImagesFor({ id }) {
     const [imageList, setImageList] = useState([]);
@@ -8,15 +8,13 @@ export default function ImagesFor({ id }) {
             .then((res) => res.json())
             .then((data) => {
                 if (data.profiles) {
-                    const urls = data.profiles.map(
-                        (img) => `https://image.tmdb.org/t/p/w45/${img.file_path}`
-                    );
-                    setImageList(urls);
+                    const urls = data.profiles.map((img) => `https://image.tmdb.org/t/p/w45/${img.file_path}`); // Sets the full url for the image for each img.
+                    setImageList(urls); 
                 }
             })
             .catch((error) => console.error("Error fetching images:", error));
 
-    }, [id]); // Need to add the id in the array for safety!
+    }, [id]); // Need to add the id in the array!
 
     return (
         <>
