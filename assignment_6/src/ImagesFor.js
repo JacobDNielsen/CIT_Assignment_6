@@ -15,21 +15,21 @@ export default function ImagesFor({id}){
         // }
         // response();
 
-        let ignore = false;
+       // let ignore = false;
 
         fetch('https://api.themoviedb.org/3/person/' + id + '/images?api_key=' + process.env.REACT_APP_API_KEY)
         .then(res => res.json())
         .then(data => 
-            {
-                if(!ignore){
-                    setImages(data.profiles?.map((img) => 'https://image.tmdb.org/t/p/w45/'+ img?.file_path))    
-                }
-            }
-        );
+          //  {
+               // if(!ignore){
+                    setImages(data.profiles?.map((img) => 'https://image.tmdb.org/t/p/w45/'+ img?.file_path))  )  
+               // }
+            //}
+        // );
 
-        return () => {
-            ignore = true;
-          };
+        // return () => {
+        //     ignore = true;
+        //   };
 
         // fetch('https://api.themoviedb.org/3/person/' + id + '/images?api_key=' + process.env.REACT_APP_API_KEY)
         // .then(res => res.json())
@@ -41,9 +41,11 @@ export default function ImagesFor({id}){
         // )
     }, [id]);
   
-    return (
-        <>
-            {images?.map((img, index) => <img src={img} key={index} alt={"none"}></img>)}        
-        </>
-    );
+    if(images){
+        return (
+            <>
+                {images.map((img, index) => <img src={img} key={index} alt={"none"}></img>)}        
+            </>
+        );
+    }
 }
