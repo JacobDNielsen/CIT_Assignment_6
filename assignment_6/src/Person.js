@@ -37,21 +37,20 @@ export function Person({name, known_for_department, doShow, known_for}){
     )
 }
 
-
 export function PersonSimple({person}){ 
+    if(person){
+        return (
+            <div>
+                <p>{person.name}'s is known for department: {person.known_for_department}</p>
+                <ImageFor id={person.id}/>
     
-    return (
-        <div>
-            <p>{person?.name}'s is known for department: {person?.known_for_department}</p>
-            <ImageFor id={person?.id}/>
-
-            <h3>Known for titles:</h3>
-            {/* <p>{person?.id}</p> */}
-            
-            {person?.known_for.map((t) => 
-                <Title known_for={t}/>
-               
-            )}
-        </div>
-    )
+                <h3>Known for titles:</h3>
+                {/* <p>{person?.id}</p> */}
+                
+                {person.known_for.map((t, index) => 
+                    <Title known_for={t} key={index}/>               
+                )}
+            </div>
+        )
+    }
 }

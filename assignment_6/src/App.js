@@ -22,7 +22,22 @@ function App() {
       setPersonsIndex(personIndex + number)
     }
   }
-  
+
+  let d;
+  if(persons) {
+    d =  (
+      <div>
+               <h1>Task 7:</h1>
+        {personIndex > 1 && <button onClick={e => ChangePersonIndex(-2)}>previous - 2</button>}
+        {personIndex > 0 && <button onClick={e => ChangePersonIndex(-1)}>previous</button>}
+        {personIndex < persons.length -1 && <button onClick={e => ChangePersonIndex(1)}>next</button>}
+        {personIndex < persons.length -2 && <button onClick={e => ChangePersonIndex(2)}>next + 2</button>}
+        <br></br>
+        <PersonSimple person={persons[personIndex]} />
+      </div>
+    )
+  }
+
   return (
     <div className="App">
         {/* <h1>Task 3:</h1>
@@ -57,13 +72,14 @@ function App() {
         )} */}
         
 
-        <h1>Task 7:</h1>
+        {/* <h1>Task 7:</h1>
         {personIndex > 1 && <button onClick={e => ChangePersonIndex(-2)}>previous - 2</button>}
         {personIndex > 0 && <button onClick={e => ChangePersonIndex(-1)}>previous</button>}
         {personIndex < persons.length -1 && <button onClick={e => ChangePersonIndex(1)}>next</button>}
         {personIndex < persons.length -2 && <button onClick={e => ChangePersonIndex(2)}>next + 2</button>}
         <br></br>
-        <PersonSimple person={persons[personIndex]} />
+        <PersonSimple person={persons[personIndex]} /> */}
+        {d}
 
     </div>
   );
