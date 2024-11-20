@@ -26,11 +26,14 @@ function App() {
   return (
     <div className="App">
         {/* <h1>Task 3:</h1>
-        {persons?.map((p) => <p> {p.name}</p> )} 
-        {/*         
-        <h1>Task 4:</h1> */}
-        {/* <h1>Task 5 a:</h1> */}
-        {/* {persons?.map((p, index) => <Person name ={p.name} known_for_department ={p.known_for_department} doShow={ personIndex===index ? true : false} /> )} */}
+        {persons?.map((p) => <p> {p.name}</p> )}  */}
+        
+        {/* <h1>Task 4:</h1> */}
+
+        {/* <h1>Task 5 a:</h1>
+        {persons?.map((p, index) => <Person name ={p.name} known_for_department ={p.known_for_department} doShow={ personIndex===index ? true : false} /> )}
+         */}
+
         {/* <h1>Task 5 b:</h1>
         {personIndex > 0 && <button onClick={e => ChangePersonIndex(-1)}>previous</button>}
         {personIndex < persons.length -1 && <button onClick={e => ChangePersonIndex(1)}>next</button>}
